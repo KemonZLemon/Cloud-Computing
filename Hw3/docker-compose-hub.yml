@@ -1,0 +1,21 @@
+services:
+  web:
+    image: kemonzlemon/hw03_app1:latest
+    ports:
+      - 50000:80
+    networks:
+      - webnet
+  web2:
+    image: kemonzlemon/hw03_app2:latest
+    ports:
+      - 50001:80
+    networks:
+      - webnet
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    networks:
+      - webnet
+networks:
+  webnet:

@@ -1,0 +1,6 @@
+services:
+ web: {image: "mywebapp:latest", ports: ["50000:80"], networks: ["webnet"]}
+ web2: {image: "mywebapp2:latest", ports: ["50001:80"], networks: ["webnet"]}
+ redis: {image: "redis:alpine", ports: ["6379:6379"], networks: ["webnet"]}
+networks:
+ webnet: {}
